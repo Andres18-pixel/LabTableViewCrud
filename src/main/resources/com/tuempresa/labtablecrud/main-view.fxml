@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+<VBox spacing="10" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
     <padding>
         <Insets top="15" right="15" bottom="15" left="15"/>
     </padding>
@@ -18,8 +18,8 @@
 
         <CheckBox fx:id="chkExistencias" text="Solo con existencias"/>
 
-        <Button text="Buscar" onAction="#recargarTabla"/>
-        <Button text="Limpiar Filtros" onAction="#limpiarFiltros"/>
+        <Button text="Buscar" onAction="#recargarTabla" styleClass="btn-secondary"/>
+        <Button text="Limpiar Filtros" onAction="#limpiarFiltros" styleClass="btn-secondary"/>
     </HBox>
 
     <VBox spacing="5" VBox.vgrow="ALWAYS">
@@ -57,9 +57,9 @@
     </GridPane>
 
     <HBox spacing="10" alignment="CENTER_RIGHT">
-        <Button text="Nuevo / Limpiar" onAction="#limpiarFormulario"/>
-        <Button text="Guardar" onAction="#guardarProducto"/>
-        <Button text="Actualizar" onAction="#actualizarProducto"/>
-        <Button text="Eliminar" onAction="#eliminarProducto"/>
+        <Button text="Nuevo / Limpiar" onAction="#limpiarFormulario" styleClass="btn-secondary"/>
+        <Button text="Guardar" onAction="#guardarProducto" styleClass="btn-success"/>
+        <Button text="Actualizar" onAction="#actualizarProducto" styleClass="btn-primary"/>
+        <Button text="Eliminar" onAction="#eliminarProducto" styleClass="btn-danger"/>
     </HBox>
 </VBox>

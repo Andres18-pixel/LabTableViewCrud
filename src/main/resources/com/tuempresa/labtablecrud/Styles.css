@@ -1,0 +1,42 @@
+.button {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn-secondary {
+    -fx-background-color: #E2E8F0;
+    -fx-text-fill: #334155;
+    -fx-border-color: #CBD5E1;
+}
+.btn-secondary:hover {
+    -fx-background-color: #CBD5E1;
+}
+
+.btn-success {
+    -fx-background-color: #2E7D32;
+    -fx-text-fill: white;
+}
+.btn-success:hover {
+    -fx-background-color: #1B5E20;
+}
+
+.btn-primary {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: white;
+}
+.btn-primary:hover {
+    -fx-background-color: #0D47A1;
+}
+
+.btn-danger {
+    -fx-background-color: #C62828;
+    -fx-text-fill: white;
+}
+.btn-danger:hover {
+    -fx-background-color: #B71C1C;
+}
