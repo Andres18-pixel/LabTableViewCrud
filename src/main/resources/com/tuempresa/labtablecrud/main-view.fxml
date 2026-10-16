@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Buscar:"/>
+        <TextField fx:id="txtBuscar" promptText="Nombre o código..." prefWidth="150"/>
+
+        <Label text="Categoría:"/>
+        <ComboBox fx:id="cbCategoriaFiltro" prefWidth="120"/>
+
+        <CheckBox fx:id="chkExistencias" text="Solo con existencias"/>
+
+        <Button text="Buscar" onAction="#recargarTabla"/>
+        <Button text="Limpiar Filtros" onAction="#limpiarFiltros"/>
+    </HBox>
+
+    <VBox spacing="5" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colCodigo" text="Código" prefWidth="90"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
+                <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="120"/>
+                <TableColumn fx:id="colPrecio" text="Precio (C$)" prefWidth="90"/>
+                <TableColumn fx:id="colStock" text="Stock" prefWidth="70"/>
+            </columns>
+        </TableView>
+        <Label fx:id="lblContador" text="Registros mostrados: 0" style="-fx-font-weight: bold;"/>
+    </VBox>
+
+    <GridPane hgap="10" vgap="8">
+        <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtId" disable="true" editable="false" prefWidth="80" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Código:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtCodigo" prefWidth="120" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Nombre:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+        <Label text="Categoría:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbCategoriaForm" prefWidth="150" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Precio:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtPrecio" prefWidth="100" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Label text="Stock:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtStock" prefWidth="100" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Nuevo / Limpiar" onAction="#limpiarFormulario"/>
+        <Button text="Guardar" onAction="#guardarProducto"/>
+        <Button text="Actualizar" onAction="#actualizarProducto"/>
+        <Button text="Eliminar" onAction="#eliminarProducto"/>
+    </HBox>
+</VBox>
